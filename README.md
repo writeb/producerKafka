@@ -12,10 +12,9 @@
 
 API
 POST http://localhost:8000/api/messages - принимает сообщение и отправляет его в Kafka.
-  Body - '<Message>
-          <sender>Test</sender>
-          <message>it is test</message>
-        </Message>'
+Body: { "sender": "string", "message": "string" }
+Content-Type: application/xml
+
 GET http://localhost:8000/api/messages - возвращает последние 10 сообщений или сообщения определенного пользователя.
 
 GET http://localhost:8001/api/sent-messages - возвращает список отправленных сообщений и код ответа сервера email.
